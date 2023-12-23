@@ -3,7 +3,8 @@
     title: string,
     author?: string,
     category: string[] | [],
-    description: string
+    description: string,
+    customClass?: string
   }
 
   const props = withDefaults(defineProps<BlogInterface>(), {
@@ -20,6 +21,6 @@
 <template>
   <main class="flex flex-col gap-4">
     Blog Post : {{ props.title }}
-    <button @click="emit('add-count')" class="bg-blue-500 rounded-md p-2">count me</button>
+    <button @click="emit('add-count')" class="rounded-md p-2" :class="customClass">count me</button>
   </main>
 </template>
