@@ -16,5 +16,6 @@
 <template>
   <main>
     Blog Post : {{ props.title }}
+    <button @click="$emit('add-count')">count me</button>
   </main>
 </template>
