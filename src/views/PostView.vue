@@ -6,12 +6,20 @@
 </script>
 
 <template>
-  <main>
+  <main class="p-4 container flex flex-col">
     <h1>Hello world</h1>
     <p>Total count :  {{ count }}</p>
-    <BlogPostComponent
-      @addCount="count++"
-      title="My title"
-    />
+    <div class="flex flex-row gap-4">
+      <BlogPostComponent
+        class="bg-green-500 p-3 rounded-md"
+        @addCount="count++"
+        title="Cute cat"
+      />
+      <BlogPostComponent
+        class="bg-green-500 p-3 rounded-md"
+        @addCount="count++"
+        title="Bad news"
+      />
+    </div>
   </main>
 </template>

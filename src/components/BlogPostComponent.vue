@@ -18,8 +18,8 @@
 </script>
 
 <template>
-  <main>
+  <main class="flex flex-col gap-4">
     Blog Post : {{ props.title }}
-    <button @click="emit('add-count')">count me</button>
+    <button @click="emit('add-count')" class="bg-blue-500 rounded-md p-2">count me</button>
   </main>
 </template>
