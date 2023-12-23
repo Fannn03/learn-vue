@@ -10,7 +10,7 @@
     <h1>Hello world</h1>
     <p>Total count :  {{ count }}</p>
     <BlogPostComponent
-      @add-count="count++"
+      @addCount="count++"
       title="My title"
     />
   </main>

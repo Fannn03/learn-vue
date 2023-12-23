@@ -11,11 +11,15 @@
     category: () => [],
     description: 'adadwa'
   })
+  
+  const emit = defineEmits([
+    'add-count'
+  ]);
 </script>
 
 <template>
   <main>
     Blog Post : {{ props.title }}
-    <button @click="$emit('add-count')">count me</button>
+    <button @click="emit('add-count')">count me</button>
   </main>
 </template>
