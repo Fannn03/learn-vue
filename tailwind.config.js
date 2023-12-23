@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,vue}",
   ],
   theme: {
+    fontFamily: {
+      'dm-serif': ['DM Serif Display', 'serif']
+    },
     extend: {},
   },
   plugins: [],
