@@ -13,6 +13,12 @@
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
+  // div id section must be same with linkInterface<name>
+  const scrollToDivElement = (id: string) => {
+    const element = document.getElementById(id.toLowerCase());
+    element?.scrollIntoView({behavior: 'smooth'});
+  }
+
   onMounted(() => {
     window.addEventListener('scroll', onScroll);
   })
@@ -21,6 +27,7 @@
 <template>
   <div class="text-white">
     <NavbarComponent
+      @scroll-to-div-element="scrollToDivElement"
       class="top-0 sticky"
       :class="{'bg-gray-900': isScrolled}"
     />
@@ -30,7 +37,8 @@
       <div class="md:flex md:flex-row md:justify-center md:mt-10 font-dm-serif">
         <div class="md:flex md:flex-col md:justify-center md:w-1/2">
           <p class="md:text-xl text-gray-400">Hello!</p>
-          <h1 class="md:text-5xl">I'm <span class="text-blue-400">Irfan Setiawan</span> an Backend Engineer</h1>
+          <h1 id="headerText" class="md:text-5xl">I'm <span class="text-blue-400">Irfan Setiawan</span> an Backend Engineer</h1>
+          <!-- <h1 id="textHeader" class="md:text-5xl"></h1> -->
           <p class="text-gray-400 md:mt-6">An Junior backend engineer that passioned in <span class="text-blue-500">Node JS</span></p>
         </div>
         <img src="../assets/profile.jpeg" alt="profile"
@@ -39,16 +47,7 @@
       </div>
       <!-- End Header -->
       <!-- About -->
-      <div class="md:flex md:flex-col">
-        <h1 class="md:text-4xl text-center font-dm-serif text-gray-400">About</h1>
-      </div>
-      <div class="md:flex md:flex-col">
-        <h1 class="md:text-4xl text-center font-dm-serif text-gray-400">About</h1>
-      </div>
-      <div class="md:flex md:flex-col">
-        <h1 class="md:text-4xl text-center font-dm-serif text-gray-400">About</h1>
-      </div>
-      <div class="md:flex md:flex-col">
+      <div id="about" class="md:flex md:flex-col">
         <h1 class="md:text-4xl text-center font-dm-serif text-gray-400">About</h1>
       </div>
       <!-- End About -->
